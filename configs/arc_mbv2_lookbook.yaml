@@ -1,0 +1,23 @@
+# general
+batch_size: 128
+input_size: 256
+embd_shape: 64
+margin: 0.0001
+logist_scale: 16
+sub_name: 'arc_mbv2'
+backbone_type: 'MobileNetV2' # 'ResNet50', 'MobileNetV2'
+head_type: ArcHead # 'ArcHead', 'NormHead'
+easy_margin: False
+crop: None # 'random', 'central', None
+
+# train
+train_dataset: './tfrecords-lookbook-atr/data_lookbook_train.tfrecord'
+val_dataset: './tfrecords-lookbook-atr/data_lookbook_val.tfrecord'
+test_dataset: './tfrecords-lookbook-atr/data_lookbook_test.tfrecord'
+num_classes: 9672
+num_samples_train: 61287
+num_samples_val: 6394
+num_samples_test: 2180
+epochs: 10
+base_lr: 0.01
+w_decay: !!float 5e-4
